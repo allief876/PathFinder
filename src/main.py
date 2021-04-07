@@ -4,7 +4,7 @@ import simpul as n
 import math
 
 # A* search
-def astar(graph, heuristics, start, end, data_node, startNode, endNode, jmlNode):
+def astar(graph, heuristics, start, end):
 
     # Bikin variabel buat visualisasi
     G = gv.GraphVisual()
@@ -14,10 +14,8 @@ def astar(graph, heuristics, start, end, data_node, startNode, endNode, jmlNode)
     closed = []
 
     # Membuat node awal & node akhir
-    x = float(data_node[startNode][1])
-    y = float(data_node[startNode][2])
-    start_node = n.Node(start, None, x, y)
-    goal_node = n.Node(end, None, x, y) # Parent dari goal ialah None karena belum diketahui
+    start_node = n.Node(start, None)
+    goal_node = n.Node(end, None) # Parent dari goal ialah None karena belum diketahui
     
     # Tambahkan node pertama ke node terbuka
     open.append(start_node)
@@ -47,7 +45,7 @@ def astar(graph, heuristics, start, end, data_node, startNode, endNode, jmlNode)
             path = path[::-1]
             for eachline in path:
                 print(eachline)
-            G.visualize()
+            G.visualize(node[startNode], node[endNode])
             return path
 
         # Dapatkan tetangga
@@ -55,17 +53,7 @@ def astar(graph, heuristics, start, end, data_node, startNode, endNode, jmlNode)
 
         # Untuk setiap tetangganya current...
         for key, value in neighbors.items():
-            i = 0
-            ketemuIndex = False
-            while (not ketemuIndex and i < jmlNode):
-                if (key == data_node[i][0]):
-                    ketemuIndex = True
-                    print("OK")
-                else:
-                    i += 1
-            x = float(data_node[i][1])
-            y = float(data_node[i][2])
-            neighbor = n.Node(key, current_node, x, y)
+            neighbor = n.Node(key, current_node)
 
             # Cek jika tetangga ada pada closed list
             if(neighbor in closed):
@@ -180,4 +168,4 @@ heuristics = {}
 for i in range(jmlNode):
     heuristics[node[i]] = Jarak2Node(float(data_node[i][1]),float(data_node[endNode][1]),float(data_node[i][2]),float(data_node[endNode][2]))
  
-astar(graph, heuristics, node[startNode], node[endNode], data_node, startNode, endNode, jmlNode)
+astar(graph, heuristics, node[startNode], node[endNode])
