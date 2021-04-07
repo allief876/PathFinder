@@ -1,14 +1,13 @@
-import g
-import n
+import visgraf as gv
+import graf as g
+import simpul as n
 import math
-import networkx as nx
-import matplotlib.pyplot as plt
 
 # A* search
 def astar(graph, heuristics, start, end):
 
     # Bikin variabel buat visualisasi
-    G = GraphVisual()
+    G = gv.GraphVisual()
     
     # Bikin list untuk node terbuka dan tertutup
     open = []
@@ -77,30 +76,6 @@ def add_to_open(open, neighbor):
         if (neighbor == node and neighbor.f > node.f):
             return False
     return True
-
-# Kelas GraphVisual
-class GraphVisual:
-   
-    def __init__(self):
-        
-        # self adalah list yang menyimpan semua
-        # himpunan edge yang membentuk graf
-        self.visual = []
-          
-    # meminta node asal dan node tujuan
-    # serta memasukkan ke self
-    def addEdge(self, a, b):
-        edge = [a, b]
-        self.visual.append(edge)
-    
-    # Objek dari kelas Graph dari modul networkx
-    # nx.draw_networkx(G) - membentuk graf
-    # plt.show() menampilkan graf
-    def visualize(self):
-        G = nx.Graph()
-        G.add_edges_from(self.visual)
-        nx.draw_networkx(G)
-        plt.show()
 
 # Rumus menentukan jarak dua titik
 def Jarak2Node(x1,x2,y1,y2):
