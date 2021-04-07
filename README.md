@@ -22,6 +22,7 @@ The program basically will render the node between start node to goal node by se
 
 ## Input Examples
 There's example of the input when running the main program :
+
 Halo, silahkan pilih nomor file yang ingin Anda periksa!
 Pilihan:
 1. tc1.txt (Kampus ITB)
