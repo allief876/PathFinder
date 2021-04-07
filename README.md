@@ -30,7 +30,7 @@ Pilihan:
 5. tc5.txt (Blitar)
 6. tc6.txt (Monas)
 
-> 1
+> [1]
 
 
 List lokasi:
@@ -47,12 +47,12 @@ List lokasi:
 
 
 Silahkan pilih nomor lokasi start dari lokasi yang tersedia dalam list!
-> 2
+> [2]
 
 -Silahkan pilih nomor lokasi tujuan dari lokasi yang tersedia dalam list!
-> 5
+> [5]
 Ini adalah jalan dari Kontiki_Lintas_Media ke Garuda_Kencana_Toko
-['Kontiki_Lintas_Media: 0', 'Jend_Sudirman_Navaro: 99.19158230455622', 'Garuda_Kencana_Toko: 226.01949721288233']
+'Kontiki_Lintas_Media: 0', 'Jend_Sudirman_Navaro: 99.19158230455622', 'Garuda_Kencana_Toko: 226.01949721288233'
 
 ## Status
 Project is: _finished_
