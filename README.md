@@ -49,7 +49,7 @@ List lokasi:
 Silahkan pilih nomor lokasi start dari lokasi yang tersedia dalam list!
 > _2_
 
--Silahkan pilih nomor lokasi tujuan dari lokasi yang tersedia dalam list!
+Silahkan pilih nomor lokasi tujuan dari lokasi yang tersedia dalam list!
 > _5_
 
 Ini adalah jalan dari Kontiki_Lintas_Media ke Garuda_Kencana_Toko
