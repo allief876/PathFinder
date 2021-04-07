@@ -13,6 +13,9 @@ Rute Finder based on google map location, using python 3.x for A* algorithm impl
 The program basically will render the node between start node to goal node by searching the most-less-cost way to reach the solution.
 
 ## Setup
+
+Precondition: You are using Windows 10 and your Python version is 3.0 or higher.
+
 1. Make sure this library already installed on your computer by using pip install (for example, 'pip install networkx'):
     - networkx
     - googlemaps
