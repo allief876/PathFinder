@@ -108,7 +108,7 @@ def Jarak2Node(x1,x2,y1,y2):
 
 # PROGRAM UTAMA
 
-print("Halo, silahkan ketik nama file (Beserta formatnya, .txt) yang ingin Anda periksa!")
+print("Halo, silahkan pilih nomor file yang ingin Anda periksa!")
 print("Pilihan:")
 print("1. tc1.txt (Kampus ITB)")
 print("2. tc2.txt (Alun-alun Bandung)")
@@ -121,7 +121,7 @@ print("> ",end='')
 
 namafile = input()
 
-namafile = "../test/" + namafile
+namafile = "../test/tc" + namafile + ".txt"
 f = open(namafile,"r")
 
 # Baca file dan masukkan ke variabel
@@ -166,24 +166,31 @@ for i in range(jmlNode+1,jmlNode+1+jmlNode):
 graph = g.Graph()
 jarak = 0
 
-# Start dan end sudah di hard coded
-# start: node[7]
-# end: node[3]
+print("\n\nList lokasi:")
+for i in range(jmlNode):
+    print(str(i+1) + ". " + node[i])
+    
+print("\n\nSilahkan pilih nomor lokasi start dari lokasi yang tersedia dalam list!")
+print("> ",end='')
+startNode = int(input()) - 1
+print("\n\nSilahkan pilih nomor lokasi tujuan dari lokasi yang tersedia dalam list!")
+print("> ",end='')
+endNode = int(input()) - 1
 
 for i in range(jmlNode):
     for j in range(jmlNode):
         if (graf[i][j] == 1):
             jarak = Jarak2Node(float(data_node[i][1]),float(data_node[j][1]),float(data_node[i][2]),float(data_node[j][2])) * 100000
             graph.connect(node[i],node[j],jarak)
-
-heuristics = {} # Map yang memetakan node[i] dengan jarak heuristik node[i] dengan node end
+ 
+heuristics = {}
 for i in range(jmlNode):
     heuristics[node[i]] = Jarak2Node(float(data_node[i][1]),float(data_node[3][1]),float(data_node[i][2]),float(data_node[3][2]))
-
-path = astar(graph, heuristics, node[7], node[3])
+ 
+path = astar(graph, heuristics, node[startNode], node[endNode])
 print("Ini adalah jalan dari ",end='')
-print(node[7],end=' ')
+print(node[startNode],end=' ')
 print("ke ",end='')
-print(node[3])
+print(node[endNode])
 print(path)
 print()
