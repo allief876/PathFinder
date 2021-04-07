@@ -185,7 +185,7 @@ for i in range(jmlNode):
  
 heuristics = {}
 for i in range(jmlNode):
-    heuristics[node[i]] = Jarak2Node(float(data_node[i][1]),float(data_node[3][1]),float(data_node[i][2]),float(data_node[3][2]))
+    heuristics[node[i]] = Jarak2Node(float(data_node[i][1]),float(data_node[endNode][1]),float(data_node[i][2]),float(data_node[endNode][2]))
  
 path = astar(graph, heuristics, node[startNode], node[endNode])
 print("Ini adalah jalan dari ",end='')
