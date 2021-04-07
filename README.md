@@ -17,7 +17,8 @@ The program basically will render the node between start node to goal node by se
     - networkx
     - googlemaps
     - matplotlib
-2. open the main.py and follow the input instruction when the program is running
+2. Open terminal in src folder then run `py main.py`
+3. Have fun!
 
 ## Input Examples
 There's example of the input when running the main program :
@@ -53,12 +54,13 @@ Silahkan pilih nomor lokasi tujuan dari lokasi yang tersedia dalam list!
 > _5_
 
 Ini adalah jalan dari Kontiki_Lintas_Media ke Garuda_Kencana_Toko
-'Kontiki_Lintas_Media: 0', 'Jend_Sudirman_Navaro: 99.19158230455622', 'Garuda_Kencana_Toko: 226.01949721288233'
+
+['Kontiki_Lintas_Media 0', 'Jend_Sudirman_Navaro: 99.19158230455622', 'Garuda_Kencana_Toko 226.01949721288233']
 
 ## Status
 Project is: _finished_
 
 ## Credit
 Source Code Created By :
-    - Farrell Abieza Zidan / 13519182
-    - Allief Nuriman / 13519221
+* Farrell Abieza Zidan / 13519182
+* Allief Nuriman / 13519221
