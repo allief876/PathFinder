@@ -37,15 +37,16 @@ def astar(graph, heuristics, start, end):
                 G.addEdge(current_node.name,current_node.parent.name)
                 current_node = current_node.parent
             path.append(start_node.name + ' ' + str(start_node.g))
-            print("Ini adalah jalan dari ",end='')
+            print("\nIni adalah jalan dari ",end='')
             print(node[startNode],end=' ')
             print("ke ",end='')
             print(node[endNode])
             # Kembalikan path secara terbalik (Karena kita menelusuri dari goal_node)
-            print(path[::-1])
-            print()
+            path = path[::-1]
+            for eachline in path:
+                print(eachline)
             G.visualize()
-            return path[::-1]
+            return path
 
         # Dapatkan tetangga
         neighbors = graph.get(current_node.name)
