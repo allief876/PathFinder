@@ -37,9 +37,14 @@ def astar(graph, heuristics, start, end):
                 G.addEdge(current_node.name,current_node.parent.name)
                 current_node = current_node.parent
             path.append(start_node.name + ' ' + str(start_node.g))
-            # Visualisasikan graf
-            G.visualize()
+            print("Ini adalah jalan dari ",end='')
+            print(node[startNode],end=' ')
+            print("ke ",end='')
+            print(node[endNode])
             # Kembalikan path secara terbalik (Karena kita menelusuri dari goal_node)
+            print(path[::-1])
+            print()
+            G.visualize()
             return path[::-1]
 
         # Dapatkan tetangga
@@ -162,10 +167,4 @@ heuristics = {}
 for i in range(jmlNode):
     heuristics[node[i]] = Jarak2Node(float(data_node[i][1]),float(data_node[endNode][1]),float(data_node[i][2]),float(data_node[endNode][2]))
  
-path = astar(graph, heuristics, node[startNode], node[endNode])
-print("Ini adalah jalan dari ",end='')
-print(node[startNode],end=' ')
-print("ke ",end='')
-print(node[endNode])
-print(path)
-print()
+astar(graph, heuristics, node[startNode], node[endNode])
